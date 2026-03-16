@@ -1,4 +1,10 @@
-body{
-    margin : 0 ;
-     background:linear-gradient(to right,rgb(0, 110, 255),rgb(36, 0, 128))
-}
+body {
+    background-image: url("../media/images/retro-futuristic-80s-background-free-vector.jpg");
+    background-size:cover;
+    background-attachment: fixed;
+  }
+.custom-navbar {
+    background-color: transparent;
+}.navbar-brand{
+    color:rgba(255, 208, 0, 0.836)
+  }
