@@ -363,7 +363,7 @@ section h2 span::after {
 /* cta section */
 
 .bg-primary {
-    background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-purple) 100%) !important;
+    background: linear-gradient(135deg, #5a2d82 0%, #3d1f5c 100%) !important;
     border-top: 3px solid var(--neon-cyan);
     border-bottom: 3px solid var(--neon-cyan);
     box-shadow: 
@@ -500,9 +500,11 @@ body > *:not(.blob-container) {
     margin-right: 10px;
 }
 
-/* Or if using an icon with text */
 .navbar-brand {
     max-width: 200px;
+}
+.logoimage{
+    height: auto;
 }
 
 .about-section {
@@ -848,6 +850,10 @@ body > *:not(.blob-container) {
     .game-card img {
         height: 180px;
     }
+    .logimage{
+        max-width: 40px;
+        max-height: 40px;
+    }
 }
 /* ==========================================
    RESPONSIVE CONTACT
@@ -870,5 +876,10 @@ body > *:not(.blob-container) {
     .social-link i {
         font-size: 1.5rem;
     }
+    .logimage{
+        max-width: 35px;
+        max-height: 35px;
+    }
 }
+
 
