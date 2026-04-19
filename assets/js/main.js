@@ -12,8 +12,8 @@ function loadTopRatedGames() {
         const card = `
     <div class="col-lg-4 col-md-6">
         <div class="game-card h-100">
-            <a href="../pages/game-detail.html?id=${game.id}" style="text-decoration: none; color: inherit;">
-                <img src="../${game.image}" alt="${game.title}" class="game-image" style="cursor: pointer;">
+            <a href="pages/game-detail.html?id=${game.id}" style="text-decoration: none; color: inherit;">
+                <img src="${game.image}" alt="${game.title}" class="game-image" style="cursor: pointer;">
             </a>
             <div class="card-body p-3">
                 <h5 class="card-title">${game.title}</h5>
@@ -46,8 +46,8 @@ function loadLatestVlogs() {
         const card = `
     <div class="col-lg-4 col-md-6">
         <div class="vlog-card h-100">
-            <a href="../pages/vlog-detail.html?id=${vlog.id}" style="text-decoration: none; color: inherit;">
-                <img src="../${vlog.thumbnail}" alt="${vlog.title}" class="vlog-image" style="cursor: pointer;">
+            <a href="pages/vlog-detail.html?id=${vlog.id}" style="text-decoration: none; color: inherit;">
+                <img src="${vlog.thumbnail}" alt="${vlog.title}" class="vlog-image" style="cursor: pointer;">
             </a>
             <div class="card-body p-3">
                 <h5 class="card-title">${vlog.title}</h5>
