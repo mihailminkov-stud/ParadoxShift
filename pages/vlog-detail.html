@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vlog Details - Paradox Shift</title>
+    <link rel="icon" href="../assets/media/images/icon.png" type="image/png">
+    <!--Bootstrap 5.3 CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="../assets/media/images/ParadoxShiftLogo.png" alt = "ParadoxShiftLogo">
+                </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Начало</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/games.html">Игри</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/vlogs.html">Дев Влогове</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/about.html">За нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/contact.html">Контакти</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Vlog Details -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Thumbnail -->
+                    <img id="vlogThumbnail" src="" alt="Vlog Thumbnail" class="img-fluid mb-4" style="border: 3px solid var(--neon-cyan); box-shadow: 0 0 30px rgba(0, 245, 255, 0.5); max-height: 500px; width: 100%; object-fit: cover;">
+
+                    <!-- Vlog Info -->
+                    <h1 id="vlogTitle" class="display-5 fw-bold mb-3"></h1>
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <p id="vlogDeveloper" class="lead text-muted mb-0"></p>
+                        </div>
+                        <div class="text-muted">
+                            <span id="vlogViews" class="me-3"><i class="fas fa-eye"></i> </span>
+                            <span id="vlogDate"><i class="fas fa-calendar"></i> </span>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <h3 class="mt-5 mb-3">За този влог</h3>
+                    <p id="vlogFullDescription" class="lead"></p>
+
+                    <!-- Content -->
+                    <div id="vlogContent" class="mt-4" style="line-height: 1.8;"></div>
+
+                    <!-- Back Button -->
+                    <a href="vlogs.html" class="btn btn-outline-light btn-lg mt-5">
+                        <i class="fas fa-arrow-left"></i> Връщане назад
+                    </a>
+                </div>
+
+                <!-- Sidebar - Other Vlogs -->
+                <div class="col-lg-4">
+                    <h4 class="mb-4">Други влогове</h4>
+                    <div id="otherVlogsContainer"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>За нас Paradox Shift</h5>
+                    <p>Твоето място за откриване на инди игри на топ цени. Подкрепяме креативността и ти помагаме да намираш скрити гейминг съкровища.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Бързи линкове</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../pages/about.html" class="text-white-50 text-decoration-none">За нас </a></li>
+                        <li><a href="../pages/contact.html" class="text-white-50 text-decoration-none">Контакти</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Политика за поверителност</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Условия за ползване</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Последвайте ни</h5>
+                    <a href="#" class="text-white-50 me-3 text-decoration-none"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
+                    <a href="#" class="text-white-50 me-3 text-decoration-none"><i class="fab fa-discord fa-lg"></i></a>
+                    <a href="#" class="text-white-50 me-3 text-decoration-none"><i class="fab fa-youtube fa-lg"></i></a>
+                    <a href="#" class="text-white-50 text-decoration-none"><i class="fab fa-github fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="bg-white-50">
+            <p class="text-center text-white-50">© 2026 Paradox Shift. Всички права запазени.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/games-data.js"></script>
+    <script>
+        function getVlogIdFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id');
+        }
+
+        function loadVlogDetail() {
+            const vlogId = getVlogIdFromURL();
+            const vlog = getVlogById(vlogId);
+
+            if (!vlog) {
+                document.body.innerHTML = '<p class="text-center text-danger mt-5">Article not found</p>';
+                return;
+            }
+
+            document.getElementById('vlogTitle').textContent = vlog.title;
+            document.getElementById('vlogDeveloper').textContent = `by ${vlog.developer}`;
+            document.getElementById('vlogThumbnail').src = `../${vlog.thumbnail}`;
+            document.getElementById('vlogFullDescription').textContent = vlog.fullDescription;
+            
+            // Format content with paragraphs
+            const contentLines = vlog.content.split('\n');
+            let formattedContent = '';
+            contentLines.forEach(line => {
+                if (line.trim()) {
+                    if (line.startsWith('•')) {
+                        formattedContent += `<li>${line.substring(1).trim()}</li>`;
+                    } else {
+                        formattedContent += `<p>${line}</p>`;
+                    }
+                }
+            });
+            
+            // Wrap list items in ul
+            formattedContent = formattedContent.replace(/(<li>.*?<\/li>)/s, '<ul>$1</ul>');
+            document.getElementById('vlogContent').innerHTML = formattedContent;
+            
+            document.getElementById('vlogViews').innerHTML = `<i class="fas fa-eye"></i> ${vlog.views}`;
+            document.getElementById('vlogDate').innerHTML = `<i class="fas fa-calendar"></i> ${vlog.uploadDate}`;
+
+            loadOtherVlogs(vlog.id);
+        }
+
+        function loadOtherVlogs(excludeId) {
+            const other = vlogsData.filter(v => v.id !== excludeId);
+            const container = document.getElementById('otherVlogsContainer');
+            container.innerHTML = '';
+
+            other.forEach(vlog => {
+                const card = `
+                    <div class="vlog-card mb-3">
+                        <img src="../${vlog.thumbnail}" alt="${vlog.title}" class="vlog-image" style="height: 150px; width: 100%; object-fit: cover;">
+                        <div class="card-body p-2">
+                            <h6 class="card-title">${vlog.title}</h6>
+                            <p class="card-text small text-muted mb-2">${vlog.developer}</p>
+                            <a href="vlog-detail.html?id=${vlog.id}" class="btn btn-sm btn-primary w-100">Прочети</a>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadVlogDetail);
+    </script>
+</body>
+</html>

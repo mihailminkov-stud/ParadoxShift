@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Indie Игри </title>
-    
+    <title>Games - Paradox Shift</title>
+    <link rel="icon" href="../assets/media/images/icon.png" type="image/png">
     <!--Bootstrap 5.3 CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!-- CSS -->
@@ -13,18 +13,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-     <!-- Navbar -->
+    <!-- Blob Background -->
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand fw-bold" href="../index.html">
-                <img src="../assets/media/images/ParadoxShiftLogo.png" alt = "Logo">
+                <img src="../assets/media/images/ParadoxShiftLogo.png" alt = "ParadoxShiftLogo">
                 </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Начало</a></li>
+                    <li class="nav-item"><a class="nav-link "href="../index.html">Начало</a></li>
                     <li class="nav-item"><a class="nav-link active" href="../pages/games.html">Игри</a></li>
                     <li class="nav-item"><a class="nav-link" href="../pages/vlogs.html">Дев Влогове</a></li>
                     <li class="nav-item"><a class="nav-link" href="../pages/about.html">За нас</a></li>
@@ -33,7 +40,43 @@
             </div>
         </div>
     </nav>
-    <!-- Footer -->
+
+    <!-- Page Header -->
+    <section class="hero text-white py-5">
+        <div class="container py-5 text-center">
+            <h1 class="display-4 fw-bold mb-4">Открийте всички игри </h1>
+            <p class="lead">Открийте най-добрите инди игри от талантливи разработчици по света</p>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Намерете игри</label>
+                    <input type="text" id="searchInput" class="form-control" placeholder="Търсене по заглавие, разработчик или жанр...">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Филтриране по жанр</label>
+                    <select id="genreFilter" class="form-select">
+                        <option value="">Всички жанрове</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div id="gamesContainer" class="row g-4">
+                <!-- JS -->
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
     <footer class="bg-dark text-white py-5 mt-5">
         <div class="container">
             <div class="row">
@@ -62,7 +105,98 @@
             <p class="text-center text-white-50">© 2026 Paradox Shift. Всички права запазени.</p>
         </div>
     </footer>
-        
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/games-data.js"></script>
+    <script>
+        function loadGenres() {
+            const genres = getUniqueGenres();
+            const select = document.getElementById('genreFilter');
+            
+            genres.forEach(genre => {
+                const option = document.createElement('option');
+                option.value = genre;
+                option.textContent = genre;
+                select.appendChild(option);
+            });
+        }
+
+        function displayGames(games) {
+            const container = document.getElementById('gamesContainer');
+            container.innerHTML = '';
+
+            if (games.length === 0) {
+                container.innerHTML = '<p class="text-center text-warning col-12">No games found</p>';
+                return;
+            }
+
+            games.forEach(game => {
+                const stars = Array(Math.floor(game.rating)).fill('<i class="fas fa-star"></i>').join('');
+                
+                const card = `
+                    <div class="col-lg-4 col-md-6">
+                        <div class="game-card h-100">
+                                <img src="../${game.image}" alt="${game.title}" class="game-image" style="cursor: pointer; transition: transform 0.3s ease;">
+                            </a>
+                            <div class="card-body p-3">
+                                <h5 class="card-title">${game.title}</h5>
+                                <p class="card-text small text-muted mb-2">${game.developer}</p>
+                                <p class="card-text small mb-3">${game.description}</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-primary">${game.genre}</span>
+                                    <span class="rating small text-warning">${stars} ${game.rating}</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price fw-bold text-success">${game.price}EU</span>
+                                    <a href="game-detail.html?id=${game.id}" class="btn btn-sm btn-primary">Вижте повече</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            const query = this.value.trim();
+            const genre = document.getElementById('genreFilter').value;
+
+            let results = gamesData;
+
+            if (query.length > 0) {
+                results = searchGames(query);
+            }
+
+            if (genre) {
+                results = results.filter(g => g.genre === genre);
+            }
+
+            displayGames(results);
+        });
+
+        document.getElementById('genreFilter').addEventListener('change', function() {
+            const genre = this.value;
+            const query = document.getElementById('searchInput').value.trim();
+
+            let results = gamesData;
+
+            if (query.length > 0) {
+                results = searchGames(query);
+            }
+
+            if (genre) {
+                results = results.filter(g => g.genre === genre);
+            }
+
+            displayGames(results);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadGenres();
+            displayGames(gamesData);
+        });
+    </script>
 </body>
 </html>

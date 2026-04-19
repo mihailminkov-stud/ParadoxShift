@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Dev Vlogs - ParadoxShift </title>
-    
+    <title>Dev Vlogs - Paradox Shift</title>
+    <link rel="icon" href="../assets/media/images/icon.png" type="image/png">
     <!--Bootstrap 5.3 CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!-- CSS -->
@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-     <!-- Navbar -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid px-4">
-            <a class="navbar-brand fw-bold" href="../index.html">
-                <img src="../assets/media/images/ParadoxShiftLogo.png" alt = "Logo">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="../assets/media/images/ParadoxShiftLogo.png" alt = "ParadoxShiftLogo">
                 </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,25 @@
             </div>
         </div>
     </nav>
-    <!-- Footer -->
+
+    <!-- Page Header -->
+    <section class="hero text-white py-5">
+        <div class="container py-5 text-center">
+            <h1 class="display-4 fw-bold mb-4">Дев влогове</h1>
+            <p class="lead">Прочетете влогове и прозрения от независими разработчици за разработването на игри</p>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div id="vlogsContainer" class="row g-4">
+                <!--JS -->
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
     <footer class="bg-dark text-white py-5 mt-5">
         <div class="container">
             <div class="row">
@@ -44,8 +62,8 @@
                 <div class="col-md-4 mb-4">
                     <h5>Бързи линкове</h5>
                     <ul class="list-unstyled">
-                        <li><a href="pages/about.html" class="text-white-50 text-decoration-none">За нас </a></li>
-                        <li><a href="pages/contact.html" class="text-white-50 text-decoration-none">Контакти</a></li>
+                        <li><a href="../pages/about.html" class="text-white-50 text-decoration-none">За нас </a></li>
+                        <li><a href="../pages/contact.html" class="text-white-50 text-decoration-none">Контакти</a></li>
                         <li><a href="#" class="text-white-50 text-decoration-none">Политика за поверителност</a></li>
                         <li><a href="#" class="text-white-50 text-decoration-none">Условия за ползване</a></li>
                     </ul>
@@ -63,6 +81,40 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/games-data.js"></script>
+    <script>
+        function displayVlogs() {
+            const container = document.getElementById('vlogsContainer');
+            container.innerHTML = '';
+
+            vlogsData.forEach(vlog => {
+                const card = `
+                    <div class="col-lg-4 col-md-6">
+                        <div class="vlog-card h-100">
+                            <img src="../${vlog.thumbnail}" alt="${vlog.title}" class="vlog-image">
+                            <div class="card-body p-3">
+                                <h5 class="card-title">${vlog.title}</h5>
+                                <p class="card-text small text-muted mb-2">
+                                    <i class="fas fa-user"></i> ${vlog.developer}
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center small text-muted mb-3">
+                                    <span><i class="fas fa-eye"></i> ${vlog.views}</span>
+                                    <span><i class="fas fa-calendar"></i> ${vlog.uploadDate}</span>
+                                </div>
+                                <a href="vlog-detail.html?id=${vlog.id}" class="btn btn-sm btn-primary w-100">
+                                    <i class="fas fa-book"></i>Прочетете влога
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', displayVlogs);
+    </script>
 </body>
 </html>

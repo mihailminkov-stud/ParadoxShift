@@ -4,67 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Details - Paradox Shift</title>
-    
-    <!-- Bootstrap 5.3 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="../assets/media/images/icon.png" type="image/png">
+    <!--Bootstrap 5.3 CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <!-- Font Awesome-->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-     <!-- Navbar -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand fw-bold" href="../index.html">
-                <img src="../assets/media/images/ParadoxShiftLogo.png" alt = "Logo">
+                <img src="../assets/media/images/ParadoxShiftLogo.png" alt = "ParadoxShiftLogo">
                 </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Начало</a></li>
+                    <li class="nav-item"><a class="nav-link "href="../index.html">Начало</a></li>
                     <li class="nav-item"><a class="nav-link" href="../pages/games.html">Игри</a></li>
                     <li class="nav-item"><a class="nav-link" href="../pages/vlogs.html">Дев Влогове</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="../pages/about.html">За нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/about.html">За нас</a></li>
                     <li class="nav-item"><a class="nav-link" href="../pages/contact.html">Контакти</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Alert Container -->
-    <div id="alertContainer"></div>
-
-    <!-- Game Header -->
-    <div id="gameHeader">
-        <!-- Loaded by JavaScript -->
-    </div>
-
-    <!-- Main Content -->
-    <section class="py-5">
+    <!-- Game Details Container -->
+    <div id="gameDetailContainer" class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
-                    <!-- Description Section -->
-                    <div id="descriptionSection"></div>
+                <!-- Game Image -->
+                    <div class="col-lg-5 col-md-6 mb-4 d-flex align-items-center justify-content-center">
+                    <img id="gameImage" src="" alt="Game Image" class="img-fluid" style="border: 3px solid var(--neon-cyan); box-shadow: 0 0 30px rgba(0, 245, 255, 0.5); max-height: 500px; object-fit: contain;">
+                    </div>
 
-                    <!-- System Requirements Section -->
-                    <div id="systemRequirementsSection"></div>
+                <!-- Game Info -->
+                <div class="col-lg-7 col-md-6">
+                    <h1 id="gameTitle" class="display-5 fw-bold mb-2"></h1>
+                    <p id="gameDeveloper" class="lead text-muted mb-3"></p>
+                    
+                    <!-- Rating -->
+                    <div class="mb-3">
+                        <span id="gameRating" class="text-warning"></span>
+                    </div>
 
-                    <!-- Related Games Section -->
-                    <div id="relatedGamesSection"></div>
-                </div>
+                    <!-- Price -->
+                    <div class="mb-4">
+                        <h3 id="gamePrice" class="text-success fw-bold"></h3>
+                    </div>
 
-                <div class="col-lg-4">
-                    <!-- Pricing Section (Sidebar) -->
-                    <div id="pricingSection"></div>
+                    <!-- Description -->
+                    <div class="mb-4">
+                        <h4>За</h4>
+                        <p id="gameDescription"></p>
+                    </div>
+
+                    <!-- Platforms -->
+                    <div class="mb-4">
+                        <h5>Достъпна на:</h5>
+                        <div id="platformsList"></div>
+                    </div>
+
+                    <!-- Release Date -->
+                    <div class="mb-4">
+                        <p><strong>Дата на излизане:</strong> <span id="releaseDate"></span></p>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="d-flex gap-3 flex-wrap">
+                        <button class="btn btn-primary btn-lg">
+                            <i class="fas fa-shopping-cart"></i> Купи сега
+                        </button>
+                        <a href="games.html" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-arrow-left"></i> Назад
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Footer -->
+    </div>
+
+     <!-- Footer -->
     <footer class="bg-dark text-white py-5 mt-5">
         <div class="container">
             <div class="row">
@@ -94,10 +119,77 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/games-data.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <script>
+        function getGameIdFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id');
+        }
+
+        function loadGameDetail() {
+            const gameId = getGameIdFromURL();
+            const game = getGameById(gameId);
+
+            if (!game) {
+                document.getElementById('gameDetailContainer').innerHTML = '<div class="container"><p class="text-center text-danger mt-5">Game not found</p></div>';
+                return;
+            }
+
+            document.getElementById('gameTitle').textContent = game.title;
+            document.getElementById('gameDeveloper').textContent = `от ${game.developer}`;
+            document.getElementById('gameImage').src = `../${game.image}`;
+            document.getElementById('gameDescription').textContent = game.fullDescription;
+            document.getElementById('gamePrice').textContent = `${game.price}EU`;
+            document.getElementById('releaseDate').textContent = new Date(game.releaseDate).toLocaleDateString('bg-BG', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            const stars = Array(Math.floor(game.rating)).fill('<i class="fas fa-star"></i>').join('');
+            document.getElementById('gameRating').innerHTML = `${stars} ${game.rating}/5`;
+
+            const platformsHTML = game.platforms.map(p => `<span class="badge bg-primary me-2 mb-2">${p}</span>`).join('');
+            document.getElementById('platformsList').innerHTML = platformsHTML;
+
+            loadSimilarGames(game.genre, game.id);
+        }
+
+        function loadSimilarGames(genre, excludeId) {
+            const similar = gamesData.filter(g => g.genre === genre && g.id !== excludeId).slice(0, 3);
+            const container = document.getElementById('similarGamesContainer');
+            container.innerHTML = '';
+
+            if (similar.length === 0) {
+                container.innerHTML = '<p class="text-center text-muted col-12">No similar games found</p>';
+                return;
+            }
+
+            similar.forEach(game => {
+                const stars = Array(Math.floor(game.rating)).fill('<i class="fas fa-star"></i>').join('');
+                const card = `
+                    <div class="col-lg-4 col-md-6">
+                        <div class="game-card h-100">
+                            <img src="../${game.image}" alt="${game.title}" class="game-image">
+                            <div class="card-body p-3">
+                                <h5 class="card-title">${game.title}</h5>
+                                <p class="card-text small text-muted mb-2">${game.developer}</p>
+                                <p class="card-text small mb-3">${game.description}</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-primary">${game.genre}</span>
+                                    <span class="rating small text-warning">${stars} ${game.rating}</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price fw-bold text-success">${game.price}EU</span>
+                                    <a href="game-detail.html?id=${game.id}" class="btn btn-sm btn-primary">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadGameDetail);
+    </script>
 </body>
 </html>

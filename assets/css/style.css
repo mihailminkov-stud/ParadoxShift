@@ -59,76 +59,6 @@ body::before {
     z-index: 999;
 }
 
-/* blob-anim */
-
-.blob-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #0a0e27 0%, #1a0a3a 100%);
-    z-index: 0;
-    overflow: hidden;
-}
-
-.blob {
-    position: absolute;
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-    background: linear-gradient(45deg, var(--neon-pink), var(--neon-purple));
-    opacity: 0.4;
-    filter: blur(80px);
-    mix-blend-mode: screen;
-    box-shadow: 0 0 80px var(--neon-pink), 0 0 120px var(--neon-purple);
-}
-
-.blob-1 {
-    width: 400px;
-    height: 400px;
-    top: -10%;
-    right: -5%;
-    animation: blob-animation 8s infinite;
-    background: linear-gradient(45deg, var(--neon-cyan), var(--neon-blue));
-    box-shadow: 0 0 80px var(--neon-cyan), 0 0 120px var(--retro-blue);
-}
-
-.blob-2 {
-    width: 350px;
-    height: 350px;
-    bottom: -10%;
-    left: 5%;
-    animation: blob-animation 9s infinite;
-    animation-delay: -2s;
-    background: linear-gradient(45deg, var(--neon-pink), var(--neon-yellow));
-    box-shadow: 0 0 80px var(--neon-pink), 0 0 120px var(--neon-yellow);
-}
-
-.blob-3 {
-    width: 300px;
-    height: 300px;
-    top: 50%;
-    left: 50%;
-    animation: blob-animation 7s infinite;
-    animation-delay: -4s;
-    background: linear-gradient(45deg, var(--neon-purple), var(--neon-green));
-    box-shadow: 0 0 80px var(--neon-purple), 0 0 120px var(--neon-green);
-}
-
-@keyframes blob-animation {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-    }
-    25% {
-        transform: translate(30px, -50px) scale(1.1);
-    }
-    50% {
-        transform: translate(-20px, 20px) scale(0.9);
-    }
-    75% {
-        transform: translate(50px, 50px) scale(1.05);
-    }
-}
-
 /* navbar */
 
 .navbar {
@@ -832,6 +762,10 @@ body > *:not(.blob-container) {
         padding: 0.7rem 1.8rem;
         font-size: 0.9rem;
     }
+    .hero-logo{
+        max-width: 100px;
+        max-height:100px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -854,32 +788,47 @@ body > *:not(.blob-container) {
         max-width: 40px;
         max-height: 40px;
     }
+    .hero-logo{
+        max-width: 100px;
+        max-height:100px;
+    }
 }
+
 /* ==========================================
-   RESPONSIVE CONTACT
+   HERO LOGO SIZING
    ========================================== */
 
-@media (max-width: 768px) {
-    .contact-form-container {
-        padding: 1.5rem;
-    }
-
-    .social-links {
-        gap: 1rem;
-    }
-
-    .social-link {
-        padding: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .social-link i {
-        font-size: 1.5rem;
-    }
-    .logimage{
-        max-width: 35px;
-        max-height: 35px;
-    }
+.hero-logo {
+    max-width: 500px;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    margin-bottom: 2rem;
+    
 }
 
+.game-image,
+.vlog-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-purple) 100%);
+}
 
+img[alt]:not([src]) {
+    background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-purple) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+#gameDeveloper,
+#vlogDeveloper {
+    color: var(--neon-cyan) !important;
+}
+
+#vlogViews,
+#vlogDate {
+    color: var(--neon-yellow) !important;
+}
