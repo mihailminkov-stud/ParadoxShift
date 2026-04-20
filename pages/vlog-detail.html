@@ -42,7 +42,7 @@
                     <!-- Thumbnail -->
                     <img id="vlogThumbnail" src="" alt="Vlog Thumbnail" class="img-fluid mb-4" style="border: 3px solid var(--neon-cyan); box-shadow: 0 0 30px rgba(0, 245, 255, 0.5); max-height: 500px; width: 100%; object-fit: cover;">
 
-                    <!-- Vlog Info -->
+                    <!-- Info -->
                     <h1 id="vlogTitle" class="display-5 fw-bold mb-3"></h1>
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <div>
@@ -67,7 +67,7 @@
                     </a>
                 </div>
 
-                <!-- Sidebar - Other Vlogs -->
+                <!-- Other Vlogs -->
                 <div class="col-lg-4">
                     <h4 class="mb-4">Други влогове</h4>
                     <div id="otherVlogsContainer"></div>
@@ -120,16 +120,15 @@
             const vlog = getVlogById(vlogId);
 
             if (!vlog) {
-                document.body.innerHTML = '<p class="text-center text-danger mt-5">Article not found</p>';
+                document.body.innerHTML = '<p class="text-center text-danger mt-5">Влога не е намерен</p>';
                 return;
             }
 
             document.getElementById('vlogTitle').textContent = vlog.title;
-            document.getElementById('vlogDeveloper').textContent = `by ${vlog.developer}`;
+            document.getElementById('vlogDeveloper').textContent = `от ${vlog.developer}`;
             document.getElementById('vlogThumbnail').src = `../${vlog.thumbnail}`;
             document.getElementById('vlogFullDescription').textContent = vlog.fullDescription;
             
-            // Format content with paragraphs
             const contentLines = vlog.content.split('\n');
             let formattedContent = '';
             contentLines.forEach(line => {
@@ -142,7 +141,6 @@
                 }
             });
             
-            // Wrap list items in ul
             formattedContent = formattedContent.replace(/(<li>.*?<\/li>)/s, '<ul>$1</ul>');
             document.getElementById('vlogContent').innerHTML = formattedContent;
             

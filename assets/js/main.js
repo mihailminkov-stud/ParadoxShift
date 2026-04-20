@@ -24,7 +24,7 @@ function loadTopRatedGames() {
                     <span class="rating small text-warning">${stars} ${game.rating}</span>
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
-                    <span class="price fw-bold text-success">${game.price}EU</span>
+                    <span class="price fw-bold text-success">${game.price}€</span>
                     <a href="../pages/game-detail.html?id=${game.id}" class="btn btn-sm btn-primary">Вижте повече</a>
                 </div>
             </div>
@@ -35,7 +35,6 @@ function loadTopRatedGames() {
     });
 }
 
-/* Load Latest Vlogs */
 function loadLatestVlogs() {
     const container = $('#latestVlogs');
     if (!container.length) return;
@@ -69,7 +68,6 @@ function loadLatestVlogs() {
     });
 }
 
-/* Initialize */
 $(document).ready(function() {
     loadTopRatedGames();
     loadLatestVlogs();

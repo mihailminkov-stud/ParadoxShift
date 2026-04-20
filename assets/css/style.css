@@ -832,3 +832,11 @@ img[alt]:not([src]) {
 #vlogDate {
     color: var(--neon-yellow) !important;
 }
+.game-card .card-text.text-muted,
+.vlog-card .card-text.text-muted{
+    color: var(--neon-cyan)!important;
+}
+#featuredGames .text-muted,
+#latestVlogs .text-muted{
+    color: var(--neon-cyan)!important;
+}
