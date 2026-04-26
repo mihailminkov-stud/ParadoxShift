@@ -59,16 +59,12 @@ body::before {
     z-index: 999;
 }
 
-/* navbar */
-
 .navbar {
     background: linear-gradient(90deg, var(--dark-bg) 0%, #1a0a3a 100%) !important;
     border-bottom: 3px solid var(--neon-cyan);
     box-shadow: 0 0 20px rgba(0, 245, 255, 0.5), inset 0 0 20px rgba(0, 245, 255, 0.1);
     backdrop-filter: blur(10px);
 }
-
-
 
 .nav-link {
     color: var(--neon-cyan) !important;
@@ -104,8 +100,6 @@ body::before {
     color: var(--neon-pink) !important;
     text-shadow: 0 0 10px var(--neon-pink);
 }
-
-/* hero section*/
 
 .hero {
     background: linear-gradient(135deg, rgba(255, 0, 110, 0.1) 0%, rgba(181, 55, 242, 0.1) 100%);
@@ -182,8 +176,6 @@ body::before {
     }
 }
 
-/* buttons */
-
 .btn {
     border-radius: 0;
     padding: 0.8rem 2.5rem;
@@ -247,8 +239,6 @@ body::before {
     box-shadow: 0 0 30px var(--neon-pink);
     border-color: var(--neon-cyan);
 }
-
-/* sections */
 
 section {
     position: relative;
@@ -327,8 +317,6 @@ section h2 span::after {
         0 0 30px white;
 }
 
-/* footer */
-
 footer {
     background: linear-gradient(90deg, var(--dark-bg) 0%, #1a0a3a 100%);
     border-top: 3px solid var(--neon-pink);
@@ -365,9 +353,6 @@ footer hr {
     border-color: var(--neon-cyan) !important;
     box-shadow: 0 0 10px var(--neon-cyan);
 }
-/* ==========================================
-   FORMS
-   ========================================== */
 
 .form-control,
 .form-select {
@@ -400,10 +385,6 @@ footer hr {
     letter-spacing: 1px;
     text-shadow: 0 0 5px var(--neon-cyan);
 }
-
-/* ==========================================
-   UTILITIES
-   ========================================== */
 
 .text-white-50 {
     color: rgba(0, 245, 255, 0.7) !important;
@@ -508,51 +489,6 @@ body > *:not(.blob-container) {
     color: var(--neon-cyan);
 }
 
-/* Team Members */
-.team-member {
-    background: linear-gradient(135deg, rgba(181, 55, 242, 0.1) 0%, rgba(0, 245, 255, 0.1) 100%);
-    border: 2px solid var(--neon-purple);
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    border-radius: 0;
-    box-shadow: 0 0 15px rgba(181, 55, 242, 0.3);
-}
-
-.team-member:hover {
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 25px rgba(0, 245, 255, 0.5);
-    transform: scale(1.05);
-}
-
-.member-avatar {
-    color: var(--neon-cyan);
-    margin-bottom: 1.5rem;
-    text-shadow: 0 0 20px var(--neon-cyan);
-}
-
-.team-member h4 {
-    color: var(--neon-yellow);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 0 10px var(--neon-yellow);
-}
-
-.team-member .role {
-    color: var(--neon-pink);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-}
-
-.team-member .description {
-    color: var(--neon-cyan);
-    font-size: 0.9rem;
-}
-
 /* Stats Section */
 .stat-card {
     background: linear-gradient(135deg, rgba(0, 245, 255, 0.1) 0%, rgba(255, 0, 110, 0.1) 100%);
@@ -584,10 +520,6 @@ body > *:not(.blob-container) {
     letter-spacing: 1px;
 }
 
-/* ==========================================
-   CONTACT PAGE STYLES
-   ========================================== */
-
 .contact-form-container {
     background: linear-gradient(135deg, rgba(0, 245, 255, 0.1) 0%, rgba(181, 55, 242, 0.1) 100%);
     border: 2px solid var(--neon-cyan);
@@ -602,7 +534,6 @@ body > *:not(.blob-container) {
     margin-bottom: 2rem;
 }
 
-/* Contact Info Cards */
 .contact-info-card {
     background: linear-gradient(135deg, rgba(255, 0, 110, 0.1) 0%, rgba(181, 55, 242, 0.1) 100%);
     border: 2px solid var(--neon-pink);
@@ -655,7 +586,6 @@ body > *:not(.blob-container) {
     text-shadow: 0 0 15px var(--neon-cyan);
 }
 
-/* Social Links */
 .social-links {
     display: flex;
     flex-wrap: wrap;
@@ -692,7 +622,6 @@ body > *:not(.blob-container) {
     transform: translateY(-5px);
 }
 
-/* Accordion Styling */
 .accordion-item {
     background: linear-gradient(135deg, rgba(0, 245, 255, 0.05) 0%, rgba(181, 55, 242, 0.05) 100%);
     border: 1px solid var(--neon-cyan);
@@ -741,9 +670,56 @@ body > *:not(.blob-container) {
     color: var(--neon-cyan);
     margin-left: 0.5rem;
 }
-/* ==========================================
-   RESPONSIVE DESIGN
-   ========================================== */
+
+.hero-logo {
+    max-width: 500px;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    margin-bottom: 2rem;
+    
+}
+
+.game-image,
+.vlog-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-purple) 100%);
+}
+
+img[alt]:not([src]) {
+    background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-purple) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+#gameDeveloper,
+#vlogDeveloper {
+    color: var(--neon-cyan) !important;
+}
+
+#vlogViews,
+#vlogDate {
+    color: var(--neon-yellow) !important;
+}
+.game-card .card-text.text-muted,
+.vlog-card .card-text.text-muted{
+    color: var(--neon-cyan)!important;
+}
+#featuredGames .text-muted,
+#latestVlogs .text-muted{
+    color: var(--neon-cyan)!important;
+}
+.d-flex.justify-content-between.small.text-muted {
+    color: var(--neon-cyan) !important;
+}
+
+.small.text-muted {
+    color: var(--neon-cyan) !important;
+}
 
 @media (max-width: 768px) {
     .hero h1 {
@@ -792,51 +768,4 @@ body > *:not(.blob-container) {
         max-width: 100px;
         max-height:100px;
     }
-}
-
-/* ==========================================
-   HERO LOGO SIZING
-   ========================================== */
-
-.hero-logo {
-    max-width: 500px;
-    height: auto;
-    max-height: 500px;
-    object-fit: contain;
-    margin-bottom: 2rem;
-    
-}
-
-.game-image,
-.vlog-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-purple) 100%);
-}
-
-img[alt]:not([src]) {
-    background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-purple) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-}
-#gameDeveloper,
-#vlogDeveloper {
-    color: var(--neon-cyan) !important;
-}
-
-#vlogViews,
-#vlogDate {
-    color: var(--neon-yellow) !important;
-}
-.game-card .card-text.text-muted,
-.vlog-card .card-text.text-muted{
-    color: var(--neon-cyan)!important;
-}
-#featuredGames .text-muted,
-#latestVlogs .text-muted{
-    color: var(--neon-cyan)!important;
 }

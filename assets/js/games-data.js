@@ -6,7 +6,7 @@ const gamesData = [
         price: 14.99,
         image: "assets/media/images/hollowknight.jpg",
         rating: 4.8,
-        genre: "Metroidvania",
+        genre: "RPG",
         platform: "Multi",
         description: "Explore a vast interconnected kingdom of caves and horrors.",
         fullDescription: "Hollow Knight is a classically styled 2D action adventure game. Explore a vast, atmospheric world of caverns and deadly creatures.",

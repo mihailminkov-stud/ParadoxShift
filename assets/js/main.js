@@ -25,7 +25,7 @@ function loadTopRatedGames() {
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="price fw-bold text-success">${game.price}€</span>
-                    <a href="../pages/game-detail.html?id=${game.id}" class="btn btn-sm btn-primary">Вижте повече</a>
+                    <a href="pages/game-detail.html?id=${game.id}" class="btn btn-sm btn-primary">Вижте повече</a>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@ function loadLatestVlogs() {
                     <span><i class="fas fa-eye"></i> ${vlog.views}</span>
                     <span><i class="fas fa-calendar"></i> ${vlog.uploadDate}</span>
                 </div>
-                <a href="../pages/vlog-detail.html?id=${vlog.id}" class="btn btn-sm btn-primary w-100">
+                <a href="pages/vlog-detail.html?id=${vlog.id}" class="btn btn-sm btn-primary w-100">
                     <i class="fas fa-book"></i> Прочетете влога
                 </a>
             </div>
