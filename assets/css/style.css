@@ -720,6 +720,9 @@ img[alt]:not([src]) {
 .small.text-muted {
     color: var(--neon-cyan) !important;
 }
+.text-center {
+    color: var(--neon-cyan)!important;
+}
 
 @media (max-width: 768px) {
     .hero h1 {
@@ -739,8 +742,8 @@ img[alt]:not([src]) {
         font-size: 0.9rem;
     }
     .hero-logo{
-        max-width: 100px;
-        max-height:100px;
+        max-width: 300px;
+        max-height:300px;
     }
 }
 

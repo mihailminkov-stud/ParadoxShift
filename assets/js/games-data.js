@@ -111,7 +111,7 @@ const vlogsData = [
         title: "Top 10 Indie Games of 2025, that you should play",
         developer: "Gaming Talks",
         thumbnail: "assets/media/images/top10.jpg",
-        views: "250K",
+        views: "250 хил.",
         uploadDate: "преди 3 дни",
         fullDescription: "Discover the best indie games released in 2025! We count down our top 10 picks based on gameplay, story, art, and innovation.",
         content: "2025 has been an incredible year for indie gaming. From innovative mechanics to breathtaking art styles, we've seen some truly amazing games released. In this comprehensive roundup, we count down our top 10 indie games of 2025, highlighting what makes each one special and why you should play them.\n\nOur selection criteria:\n• Gameplay innovation\n• Story and narrative\n• Art and visual design\n• Audio and soundtrack\n• Overall player experience\n\nEach game on this list represents the best of what indie developers can achieve when they combine passion, creativity, and technical skill."
