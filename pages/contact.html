@@ -34,10 +34,8 @@
         </div>
     </nav>
 
-    <!-- Alert Container -->
-    <div id="alertContainer"></div>
 
-    <!-- Page Header -->
+
     <section class="hero text-white py-5">
         <div class="container py-5 text-center">
             <h1 class="display-4 fw-bold mb-4">Свържете се с нас</h1>
@@ -45,18 +43,15 @@
         </div>
     </section>
 
-    <!-- Main Content -->
     <section class="py-5">
         <div class="container">
             <div class="row g-4">
-                <!-- Contact Form -->
                 <div class="col-lg-8">
                     <div class="contact-form-container">
                         <h2 class="mb-4">
                             <i class="fas fa-envelope"></i> Изпратете ни съобщение
                         </h2>
                         <form id="contactForm">
-                            <!-- Name Field -->
                             <div class="mb-4">
                                 <label for="name" class="form-label">
                                     <i class="fas fa-user"></i> Цяло име *
@@ -64,7 +59,6 @@
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Цялото ви име" required>
                             </div>
 
-                            <!-- Email Field -->
                             <div class="mb-4">
                                 <label for="email" class="form-label">
                                     <i class="fas fa-envelope"></i> Имейл *
@@ -72,7 +66,6 @@
                                 <input type="email" class="form-control" id="email" name="email" placeholder="...@emal.com" required>
                             </div>
 
-                            <!-- Subject Field -->
                             <div class="mb-4">
                                 <label for="subject" class="form-label">
                                     <i class="fas fa-heading"></i> Предмет *
@@ -89,7 +82,6 @@
                                 </select>
                             </div>
 
-                            <!-- Message Field -->
                             <div class="mb-4">
                                 <label for="message" class="form-label">
                                     <i class="fas fa-comment"></i> Съобщение *
@@ -98,7 +90,6 @@
                                 <small class="form-text text-muted">Minimum 10 characters required.</small>
                             </div>
 
-                            <!-- Phone Field (Optional) -->
                             <div class="mb-4">
                                 <label for="phone" class="form-label">
                                     <i class="fas fa-phone"></i> Телефонен номер
@@ -106,7 +97,6 @@
                                 <input type="tel" class="form-control" id="phone" name="phone" placeholder="+359 .....">
                             </div>
 
-                            <!-- Checkbox -->
                             <div class="mb-4 form-check">
                                 <input type="checkbox" class="form-check-input" id="agree" name="agree" required>
                                 <label class="form-check-label" for="agree">
@@ -114,7 +104,6 @@
                                 </label>
                             </div>
 
-                            <!-- Submit Button -->
                             <button type="submit" class="btn btn-primary btn-lg w-100">
                                 <i class="fas fa-paper-plane"></i> Изпрати съобщение
                             </button>
@@ -122,9 +111,7 @@
                     </div>
                 </div>
 
-                <!-- Contact Information Sidebar -->
                 <div class="col-lg-4">
-                    <!-- Contact Info Cards -->
                     <div class="contact-info-card mb-4">
                         <div class="info-icon">
                             <i class="fas fa-envelope"></i>
@@ -170,7 +157,6 @@
                 </div>
             </div>
 
-            <!-- Social Links Section -->
             <div class="row py-5 mt-5">
                 <div class="col-12 text-center">
                     <h3 class="mb-4">Последвайте ни в социалните мрежи </h3>
@@ -231,10 +217,9 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Success Modal -->
+
 <div class="modal fade" id="successModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" style="background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(181, 55, 242, 0.1)); border: 2px solid var(--neon-cyan); box-shadow: 0 0 30px rgba(0, 245, 255, 0.5);">
@@ -245,7 +230,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body" style="color: var(--neon-cyan);">
-                <p style="font-size: 1.1rem;">🎮 Благодарим ви за съобщението!</p>
+                <p style="font-size: 1.1rem;"> Благодарим ви за съобщението!</p>
                 <p>Ще се свържем с Вас до 48 часа.</p>
             </div>
             <div class="modal-footer" style="border-color: var(--neon-cyan);">
@@ -256,7 +241,6 @@
 </div>
 
 <script>
-    // Contact Form Submission
     document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -265,30 +249,27 @@
         const message = this.querySelector('[name="message"]').value.trim();
         const agree = this.querySelector('[name="agree"]').checked;
         
-        // Validation
         if (!name || !email || !message) {
-            alert('❌ Моля попълнете всички полета!');
+            alert(' Моля попълнете всички полета!');
             return;
         }
         
         if (message.length < 10) {
-            alert('❌ Съобщениято трябва да съдържа поне 10 символа!');
+            alert(' Съобщениято трябва да съдържа поне 10 символа!');
             return;
         }
         
         if (!agree) {
-            alert('❌ Трябва да потвърдите!');
+            alert(' Трябва да потвърдите!');
             return;
         }
-        
-        // Show modal
+
         const successModal = new bootstrap.Modal(document.getElementById('successModal'));
         successModal.show();
         
-        // Reset form
         this.reset();
         
-        console.log('✅ Message sent!');
+        console.log('Message sent!');
     });
 </script>
 

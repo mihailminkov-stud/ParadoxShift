@@ -1,4 +1,4 @@
-console.log('✅ main.js loaded');
+console.log(' main.js loaded');
 function loadTopRatedGames() {
     const container = $('#featuredGames');
     if (!container.length) return;
@@ -71,5 +71,5 @@ function loadLatestVlogs() {
 $(document).ready(function() {
     loadTopRatedGames();
     loadLatestVlogs();
-    console.log('✅ Index initialized');
+    console.log('Index initialized');
 });

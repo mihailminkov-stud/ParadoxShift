@@ -31,48 +31,39 @@
         </div>
     </nav>
 
-    <!-- Game Details -->
     <div id="gameDetailContainer" class="py-5">
         <div class="container">
             <div class="row">
-                <!-- Game Image -->
                 <div class="col-lg-5 col-md-6 mb-4 d-flex align-items-center justify-content-center">
                     <img id="gameImage" src="" alt="Game Image" class="img-fluid" style="border: 3px solid var(--neon-cyan); box-shadow: 0 0 30px rgba(0, 245, 255, 0.5); max-height: 500px; object-fit: contain;">
                 </div>
 
-                <!-- Game Info -->
                 <div class="col-lg-7 col-md-6">
                     <h1 id="gameTitle" class="display-5 fw-bold mb-2"></h1>
                     <p id="gameDeveloper" class="lead mb-3"></p>
                     
-                    <!-- Rating -->
                     <div class="mb-3">
                         <span id="gameRating" class="text-warning"></span>
                     </div>
 
-                    <!-- Price -->
                     <div class="mb-4">
                         <h3 id="gamePrice" class="text-success fw-bold"></h3>
                     </div>
 
-                    <!-- Description -->
                     <div class="mb-4">
                         <h4>За</h4>
                         <p id="gameDescription"></p>
                     </div>
 
-                    <!-- Platforms -->
                     <div class="mb-4">
                         <h5>Достъпна на:</h5>
                         <div id="platformsList"></div>
                     </div>
 
-                    <!-- Release Date -->
                     <div class="mb-4">
                         <p><strong>Дата на излизане:</strong> <span id="releaseDate"></span></p>
                     </div>
 
-                    <!-- Buttons -->
                     <div class="d-flex gap-3 flex-wrap">
                         <button class="btn btn-primary btn-lg" id="buyBtn">
                             <i class="fas fa-shopping-cart"></i> Купи сега
@@ -86,17 +77,14 @@
         </div>
     </div>
 
-    <!-- Similar Games -->
     <section class="py-5">
         <div class="container">
             <h2 class="text-center mb-5">Подобни игри</h2>
             <div id="similarGamesContainer" class="row g-4">
-                <!-- Populated by JS -->
             </div>
         </div>
     </section>
 
-    <!-- Buy Modal -->
     <div class="modal fade" id="buyModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content" style="background: linear-gradient(135deg, rgba(255, 0, 110, 0.1), rgba(181, 55, 242, 0.1)); border: 2px solid var(--neon-pink); box-shadow: 0 0 30px rgba(255, 0, 110, 0.5);">
