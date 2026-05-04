@@ -115,6 +115,26 @@ const vlogsData = [
         uploadDate: "преди 3 дни",
         fullDescription: "Discover the best indie games released in 2025! We count down our top 10 picks based on gameplay, story, art, and innovation.",
         content: "2025 has been an incredible year for indie gaming. From innovative mechanics to breathtaking art styles, we've seen some truly amazing games released. In this comprehensive roundup, we count down our top 10 indie games of 2025, highlighting what makes each one special and why you should play them.\n\nOur selection criteria:\n• Gameplay innovation\n• Story and narrative\n• Art and visual design\n• Audio and soundtrack\n• Overall player experience\n\nEach game on this list represents the best of what indie developers can achieve when they combine passion, creativity, and technical skill."
+    },
+    {
+        id: 4,
+        title: "Въведение в създаването на 2D гейм дизайн за инди разработчици",
+        developer: "Jiji Studio",
+        thumbnail: "assets/media/images/2d.png",
+        views: "100 хил.",
+        uploadDate: "преди 8 дни",
+        fullDescription: "В тази статия ще разгледаме основите на 2D гейм дизайна – от концепцията до реализацията. Ще научите как да изградите визуален стил, механики и потребителско изживяване, които правят една игра запомняща се.",
+        content: "Създаването на 2D игра изисква комбинация от креативност, технически умения и добро планиране. В това ръководство ще преминем през ключовите етапи на гейм дизайна – от първоначалната идея до завършения продукт. Ще обърнем внимание на важни аспекти като баланс между геймплей и визия, както и как да задържите вниманието на играчите."
+    },
+    {
+        id: 5,
+        title: "Как да създаваме ефективни анимации за игри",
+        developer: "Mickel Rovus",
+        thumbnail: "assets/media/images/effect.png",
+        views: "10 хил.",
+        uploadDate: "преди 6 часа",
+        fullDescription: "В тази статия ще разгледаме основите на 2D гейм дизайна – от концепцията до реализацията. Ще научите как да изградите визуален стил, механики и потребителско изживяване, които правят една игра запомняща се.",
+        content: "Създаването на 2D игра изисква комбинация от креативност, технически умения и добро планиране. В това ръководство ще преминем през ключовите етапи на гейм дизайна – от първоначалната идея до завършения продукт. Ще обърнем внимание на важни аспекти като баланс между геймплей и визия, както и как да задържите вниманието на играчите."
     }
 ];
 
