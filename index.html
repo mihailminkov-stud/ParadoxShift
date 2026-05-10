@@ -34,13 +34,18 @@
         </div>
     </nav>
 <!-- Hero -->
-     <section class="hero bg-dark text-white py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-        <div class="container py-5 text-center">
-            <img src = "assets/media/images/ParadoxShiftLogo.png" alt = "ParadoxShiftLogo" class = "hero-logo mb-4">
+     <section class="hero bg-dark text-white">
+        <div class="hero-video-container">
+            <video class="hero-video" autoplay muted loop>
+                <source src="assets/media/video/ParadoxShiftintro.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container py-5 text-center hero-content">
             <h1 class="display-4 fw-bold mb-4">Открий брутални инди игри</h1>
             <p class="lead mb-4">Намери топ инди игри на супер цени и се свържи директно с яки разработчици</p>
             <a href="pages/games.html" class="btn btn-primary btn-lg me-3">Открийте игри</a>
-            <a href="pages/vlogs.html" class="btn btn-outline-light btn-lg">Гледай дев влогове</a>
+            <a href="pages/vlogs.html" class="btn btn-outline-light btn-lg">Прочети дев влогове</a>
         </div>
     </section>
 
@@ -56,7 +61,7 @@
     <!-- Latest Vlogs  -->
     <section class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Последни дев влогове</h2>
+            <h2 class="text-center mb-5">Последни дев Влогове</h2>
             <div id="latestVlogs" class="row g-4">
             </div>
         </div>
